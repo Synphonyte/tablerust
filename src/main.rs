@@ -12,6 +12,8 @@ fn main() {
 }
 
 fn App(cx: Scope) -> Element {
+    let (alert_visible, set_alert_visible) = use_state(&cx, || true);
+
     cx.render(rsx! {
         div {
             style: "padding: 50px",
@@ -34,19 +36,23 @@ fn App(cx: Scope) -> Element {
                 }
             }
 
-            Alert {
-                alert_type: AlertType::Danger,
-                icon_or_avatar: cx.render(rsx!{
-                    Avatar { class: "me-3", "NE" }
-                }),
-                AlertTitle {
-                    "Error in the matrix"
+            alert_visible.then(|| rsx!{
+                Alert {
+                    alert_type: AlertType::Danger,
+                    icon_or_avatar: cx.render(rsx!{
+                        Avatar { class: "me-3", "NE" }
+                    }),
+                    dismissible: true,
+                    ondismiss: |_| set_alert_visible(false),
+                    AlertTitle {
+                        "Error in the matrix"
+                    }
+                    div {
+                        class: "text-muted",
+                        "The same cat has been seen multiple times. Dejavu!"
+                    }
                 }
-                div {
-                    class: "text-muted",
-                    "The same cat has been seen multiple times. Dejavu!"
-                }
-            }
+            })
 
             div {
                 AvatarList {

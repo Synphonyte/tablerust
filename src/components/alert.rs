@@ -1,6 +1,7 @@
 use dioxus::prelude::*;
 use std::string::ToString;
 use strum_macros::Display;
+use crate::CloseButton;
 
 #[derive(Display, Debug)]
 #[strum(serialize_all = "kebab_case")]
@@ -22,7 +23,12 @@ pub struct AlertProps<'a> {
 
     #[props(default)]
     important: bool,
-    // TODO : dismissable
+
+    #[props(default)]
+    dismissible: bool,
+
+    #[props(default)]
+    pub ondismiss: EventHandler<'a>,
 }
 
 pub fn Alert<'a>(cx: Scope<'a, AlertProps<'a>>) -> Element<'a> {
@@ -49,11 +55,25 @@ pub fn Alert<'a>(cx: Scope<'a, AlertProps<'a>>) -> Element<'a> {
         ""
     };
 
+    let (close_button, dismissible) = if cx.props.dismissible {
+        (
+            cx.render(rsx! {
+                CloseButton {
+                    onclick: move |_| cx.props.ondismiss.call(())
+                }
+            }),
+            "alert-dismissible"
+        )
+    } else {
+        (None, "")
+    };
+
     cx.render(rsx! {
         div {
-            class: "alert alert-{cx.props.alert_type} {extra_class}",
+            class: "alert alert-{cx.props.alert_type} {extra_class} {dismissible}",
             role: "alert",
             children
+            close_button
         }
     })
 }
