@@ -1,11 +1,15 @@
 [package]
-name = "tablerust"
+name = "docs"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+tablerust = { path = ".." }
 dioxus = { version = "0.1.8", features = ["web", "router"] }
-strum = { version = "0.24", features = ["derive"] }
-strum_macros = "0.24.0"
+dioxus-core = "0.1.9"
+dioxus-core-macro = "0.1.7"
+dioxus-html = { version = "0.1.6", default-features = false }
+dioxus-router = "0.1.1"
+log = "0.4.14"

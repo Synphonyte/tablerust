@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 use std::string::ToString;
 use strum_macros::Display;
-use crate::CloseButton;
+use crate::components::CloseButton;
 
 #[derive(Display, Debug)]
 #[strum(serialize_all = "kebab_case")]

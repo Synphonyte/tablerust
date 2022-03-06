@@ -18,6 +18,7 @@ pub fn CloseButton<'a>(cx: Scope<'a, CloseButtonProps<'a>>) -> Element<'a> {
     cx.render(rsx! {
         a {
             class: "btn-close {cx.props.class}",
+            prevent_default: "onclick",
             "aria-label": "close",
             onclick: move |evt| {
                 evt.cancel_bubble();
