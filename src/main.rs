@@ -54,7 +54,10 @@ fn App(cx: Scope) -> Element {
                     Avatar { "MS" }
                     Avatar { image_url: "/img/avatars/001m.jpg" }
                     Avatar { image_url: "/img/avatars/002m.jpg" }
-                    Avatar { image_url: "/img/avatars/003m.jpg" }
+                    Avatar {
+                        image_url: "/img/avatars/003m.jpg",
+                        Badge { color: Color::base(Hue::Success), "" }
+                    }
                 }
             }
 
@@ -71,11 +74,26 @@ fn App(cx: Scope) -> Element {
 
             div {
                 AvatarList {
-                    Avatar { color: Color::bg(Hue::Cyan, true), "MS" }
-                    Avatar { color: Color::bg(Hue::Green, true), "MS" }
-                    Avatar { color: Color::bg(Hue::Pink, true), "MS" }
-                    Avatar { color: Color::bg(Hue::Blue, true), shape: Shape::RoundedCircle "MS" }
+                    Avatar { color: Color::light(Hue::Cyan), "MS" }
+                    Avatar { color: Color::light(Hue::Green),"MS"}
+                    Avatar { color: Color::light(Hue::Pink), size: Size::Md "MS" }
+                    Avatar { color: Color::light(Hue::Blue), shape: Shape::RoundedCircle "MS" }
                 }
+            }
+
+            div {
+                Badge { color: Color::base(Hue::Blue), "Blue" }
+                Badge { color: Color::base(Hue::Azure), "Azure" }
+                Badge { color: Color::base(Hue::Indigo), "Indigo" }
+                Badge { color: Color::base(Hue::Purple), "Purple" }
+                Badge { color: Color::base(Hue::Pink), "Pink" }
+                Badge { color: Color::base(Hue::Red), "Red" }
+                Badge { color: Color::base(Hue::Orange), "Orange" }
+                Badge { color: Color::base(Hue::Yellow), "Yellow" }
+                Badge { color: Color::light(Hue::Lime), "Lime" }
+                Badge { color: Color::base(Hue::Green), pill: true, "Green" }
+                Badge { color: Color::base(Hue::Teal), outline: true, "Teal" }
+                Badge { color: Color::base(Hue::Cyan), "Cyan" }
             }
         }
     })

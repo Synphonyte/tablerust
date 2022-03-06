@@ -17,42 +17,84 @@ pub enum Hue {
     Green,
     Teal,
     Cyan,
-}
-
-#[derive(Display, Debug)]
-#[strum(serialize_all = "kebab_case")]
-enum ColorPrefix {
-    Bg,
-    Text,
+    Danger,
+    Success,
+    Warning,
+    Info,
+    Gray
 }
 
 #[derive(Debug)]
 pub struct Color {
     hue: Hue,
     light: bool,
-    prefix: ColorPrefix,
 }
 
 impl Display for Color {
     fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
-        write!(f, "{}-{}{}", self.prefix, self.hue, if self.light { "-lt" } else { "" })
+        write!(f, "{}{}", self.hue, if self.light { "-lt" } else { "" })
     }
 }
 
 impl Color {
-    pub fn bg(hue: Hue, light: bool) -> Self {
-        Self {
-            hue,
-            light,
-            prefix: ColorPrefix::Bg,
-        }
-    }
-
-    pub fn text(hue: Hue) -> Self {
+    pub fn base(hue: Hue) -> Self {
         Self {
             hue,
             light: false,
-            prefix: ColorPrefix::Text,
         }
     }
+
+    pub fn light(hue: Hue) -> Self {
+        Self {
+            hue,
+            light: true,
+        }
+    }
+
+    pub fn to_string_with_prefix(&self, prefix: &str) -> String {
+        format!("{prefix}-{self}")
+    }
 }
+
+// #[derive(Display, Debug)]
+// #[strum(serialize_all = "kebab_case")]
+// enum ColorType {
+//     Bg,
+//     Text,
+// }
+//
+// #[derive(Debug)]
+// pub struct ColorWithType {
+//     color_type: ColorType,
+//     color: Color,
+// }
+//
+// impl Display for ColorWithType {
+//     fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
+//         write!(f, "{}-{}", self.color_type, self.color)
+//     }
+// }
+//
+// impl ColorWithType {
+//     pub fn text(hue: Hue) -> Self {
+//         Self {
+//             color: Color::base(hue),
+//             color_type: ColorType::Text
+//         }
+//     }
+//
+//     pub fn bg(hue: Hue) -> Self {
+//         Self {
+//             color: Color::base(hue),
+//             color_type: ColorType::Bg
+//         }
+//     }
+//
+//     pub fn bg_lt(hue: Hue) -> Self {
+//         Self {
+//             color: Color::light(hue),
+//             color_type: ColorType::Bg
+//         }
+//     }
+//
+// }

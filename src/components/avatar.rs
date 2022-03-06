@@ -33,7 +33,7 @@ pub fn Avatar<'a>(cx: Scope<'a, AvatarProps<'a>>) -> Element<'a> {
     };
 
     let color = match &cx.props.color {
-        Some(c) => c.to_string(),
+        Some(c) => c.to_string_with_prefix("bg"),
         None => "".to_string()
     };
 
