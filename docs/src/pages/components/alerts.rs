@@ -1,5 +1,7 @@
 use tablerust::dioxus::prelude::*;
 use tablerust::components::{Alert, AlertTitle, AlertType};
+use tablerust::icon::*;
+use tablerust::color::*;
 
 pub fn Alerts(cx: Scope) -> Element {
     cx.render(rsx! {
@@ -16,7 +18,11 @@ pub fn Alerts(cx: Scope) -> Element {
                         class: "d-flex align-items-center",
                         href: "https://preview.tabler.io/docs/alerts.html",
                         target: "_blank",
-                        "<ICON> Tabler documentation"
+                        Icon {
+                            icon: "external-link",
+                            color: Color::base(Hue::Blue),
+                        }
+                        "Tabler documentation"
                     }
                 }
             }
