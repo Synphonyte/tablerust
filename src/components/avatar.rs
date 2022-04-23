@@ -1,3 +1,5 @@
+#![allow(non_snake_case)]
+
 use dioxus::prelude::*;
 use std::string::ToString;
 use strum_macros::Display;
@@ -10,16 +12,9 @@ pub struct AvatarProps<'a> {
     #[props(default)]
     class: &'a str,
 
-    #[props(default, strip_option)]
     shape: Option<Shape>,
-
-    #[props(default, strip_option)]
     size: Option<Size>,
-
-    #[props(default, strip_option)]
     color: Option<Color>,
-
-    #[props(default, strip_option)]
     image_url: Option<&'a str>,
 
     children: Element<'a>,

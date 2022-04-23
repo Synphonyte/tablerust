@@ -1,3 +1,5 @@
+#![allow(non_snake_case)]
+
 use dioxus::prelude::*;
 use std::string::ToString;
 use strum_macros::Display;
@@ -17,7 +19,6 @@ pub struct BadgeProps<'a> {
     #[props(default)]
     outline: bool,
 
-    #[props(default, strip_option)]
     color: Option<Color>,
 
     children: Element<'a>,

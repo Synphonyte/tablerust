@@ -1,12 +1,10 @@
 mod pages;
-mod link;
 
-use link::Link;
 use pages::*;
 
 use tablerust::dioxus::{
     prelude::*,
-    router::{Route, Router},
+    router::{Route, Router, Link},
 };
 
 fn main() {

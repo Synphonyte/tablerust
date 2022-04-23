@@ -1,3 +1,5 @@
+#![allow(non_snake_case)]
+
 use dioxus::prelude::*;
 use std::string::ToString;
 use strum_macros::Display;
@@ -24,7 +26,6 @@ pub fn CloseButton<'a>(cx: Scope<'a, CloseButtonProps<'a>>) -> Element<'a> {
                 evt.cancel_bubble();
                 cx.props.onclick.call(())
             },
-            ""
         }
     })
 }

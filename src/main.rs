@@ -12,7 +12,7 @@ fn main() {
 }
 
 fn App(cx: Scope) -> Element {
-    let (alert_visible, set_alert_visible) = use_state(&cx, || true);
+    let alert_visible = use_state(&cx, || true);
 
     cx.render(rsx! {
         div {
@@ -43,7 +43,7 @@ fn App(cx: Scope) -> Element {
                         Avatar { class: "me-3", "NE" }
                     }),
                     dismissible: true,
-                    ondismiss: |_| set_alert_visible(false),
+                    ondismiss: |_| alert_visible.set(false),
                     AlertTitle {
                         "Error in the matrix"
                     }
@@ -100,6 +100,17 @@ fn App(cx: Scope) -> Element {
                 Badge { color: Color::base(Hue::Green), pill: true, "Green" }
                 Badge { color: Color::base(Hue::Teal), outline: true, "Teal" }
                 Badge { color: Color::base(Hue::Cyan), "Cyan" }
+            }
+
+            div {
+                Breadcrumb {
+                    separator: BreadcrumbSeparator::Dot,
+                    BreadcrumbItem { a { href: "#", "Home" } }
+                    BreadcrumbItem { a { href: "#", "Library" } }
+                    BreadcrumbItem { a { href: "#", "Data" } }
+                    BreadcrumbItem { a { href: "#", "File" } }
+                    BreadcrumbItem { active: true, a { href: "#", "This & That" } }
+                }
             }
         }
     })

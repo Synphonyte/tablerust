@@ -1,3 +1,5 @@
+#![allow(non_snake_case)]
+
 use dioxus::prelude::*;
 use std::string::ToString;
 use strum_macros::Display;
@@ -37,6 +39,7 @@ pub fn Alert<'a>(cx: Scope<'a, AlertProps<'a>>) -> Element<'a> {
             div {
                 class: "d-flex",
                 div {
+                    class: "alert-icon-or-avatar",
                     &cx.props.icon_or_avatar
                 }
                 div {
@@ -87,6 +90,20 @@ pub fn AlertTitle<'a>(cx: Scope<'a, AlertTitleProps<'a>>) -> Element<'a> {
     cx.render(rsx! {
         h4 {
             class: "alert-title",
+            &cx.props.children
+        }
+    })
+}
+
+#[derive(Props)]
+pub struct AlertLinkProps<'a> {
+    children: Element<'a>,
+}
+
+pub fn AlertLink<'a>(cx: Scope<'a, AlertLinkProps<'a>>) -> Element<'a> {
+    cx.render(rsx! {
+        a {
+            class: "alert-link",
             &cx.props.children
         }
     })

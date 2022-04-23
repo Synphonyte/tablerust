@@ -7,9 +7,5 @@ edition = "2021"
 
 [dependencies]
 tablerust = { path = ".." }
-dioxus = { version = "0.1.8", features = ["web", "router"] }
-dioxus-core = "0.1.9"
-dioxus-core-macro = "0.1.7"
-dioxus-html = { version = "0.1.6", default-features = false }
-dioxus-router = "0.1.1"
+dioxus = { path = "../../dioxus", features = ["web", "router"] }
 log = "0.4.14"
