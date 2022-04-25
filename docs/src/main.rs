@@ -76,6 +76,7 @@ fn App(cx: Scope) -> Element {
                                         class: "card-body",
                                         div {
                                             class: "markdown",
+                                            Route { to: "/", "Under Construction. Click left on sidebar."}
                                             Route { to: "/components/alerts", components::Alerts { } }
                                             Route { to: "/components/avatars", components::Avatars { } }
                                             Route { to: "/components/badges", components::Badges { } }
