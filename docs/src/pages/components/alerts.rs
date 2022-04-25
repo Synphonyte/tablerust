@@ -399,6 +399,410 @@ cx.render(rsx! {{
                     }
                 }
             }
+            h2 {
+                id: "alert-with-avatar",
+                "Alert with avatar"
+            }
+            p {
+                "Add an avatar to your alert modal to make it more personalized."
+            }
+            div {
+                class: "example no_toc_section",
+                div {
+                    class: "example-content",
+                    Alert {
+                        alert_type: AlertType::Success,
+                        icon_or_avatar: cx.render(rsx!{
+                            Avatar { class: "me-3", image_url: "/img/avatars/000m.jpg" }
+                        }),
+                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                    }
+                    Alert {
+                        alert_type: AlertType::Info,
+                        icon_or_avatar: cx.render(rsx!{
+                            Avatar { class: "me-3", "JL" }
+                        }),
+                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                    }
+                    Alert {
+                        alert_type: AlertType::Warning,
+                        icon_or_avatar: cx.render(rsx!{
+                            Avatar { class: "me-3", image_url: "/img/avatars/002m.jpg" }
+                        }),
+                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                    }
+                    Alert {
+                        alert_type: AlertType::Danger,
+                        icon_or_avatar: cx.render(rsx!{
+                            Avatar { class: "me-3", image_url: "/img/avatars/003m.jpg" }
+                        }),
+                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                    }
+                }
+            }
+            div {
+                class: "example-code",
+                figure {
+                    class: "highlight",
+                    pre {
+                        code {
+                            class: "language-html",
+                            "data-lang": "html",
+                            // TODO : syntax highlighting
+                            "
+Alert {{
+    alert_type: AlertType::Success,
+    icon_or_avatar: cx.render(rsx!{{
+        Avatar {{ class: \"me-3\", image_url: \"/img/avatars/000m.jpg\" }}
+    }}),
+    \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.\"
+}}
+Alert {{
+    alert_type: AlertType::Info,
+    icon_or_avatar: cx.render(rsx!{{
+        Avatar {{ class: \"me-3\", \"JL\" }}
+    }}),
+    \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.\"
+}}
+Alert {{
+    alert_type: AlertType::Warning,
+    icon_or_avatar: cx.render(rsx!{{
+        Avatar {{ class: \"me-3\", image_url: \"/img/avatars/002m.jpg\" }}
+    }}),
+    \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.\"
+}}
+Alert {{
+    alert_type: AlertType::Danger,
+    icon_or_avatar: cx.render(rsx!{{
+        Avatar {{ class: \"me-3\", image_url: \"/img/avatars/003m.jpg\" }}
+    }}),
+    \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.\"
+}}"
+                        }
+                    }
+                }
+            }
+//             h2 {
+//                 id: "alert-with-buttons",
+//                 "Alert with buttons"
+//             }
+//             p {
+//                 "Add primary and secondary buttons to your alert modals if you want users to take a particular action based on the information included in the modal message."
+//             }
+//             div {
+//                 class: "example no_toc_section",
+//                 div {
+//                     class: "example-content",
+//                     success_alert_visible.then(|| rsx! {
+//                         Alert {
+//                             alert_type: AlertType::Success,
+//                             dismissible: true,
+//                             ondismiss: move |_| {
+//                                 success_alert_visible.set(false);
+//                             },
+//                             h3 {
+//                                 "Some Title"
+//                             }
+//                             div {
+//                                 "Lorem ipsum Minim ad pariatur eiusmod ea ut nulla aliqua est quis id dolore minim voluptate."
+//                             }
+//                         }
+//                     })
+//                     info_alert_visible.then(|| rsx! {
+//                         Alert {
+//                             alert_type: AlertType::Info,
+//                             dismissible: true,
+//                             ondismiss: move |_| {
+//                                 info_alert_visible.set(false);
+//                             },
+//                             h3 {
+//                                 "Some Title"
+//                             }
+//                             div {
+//                                 "Lorem ipsum Minim ad pariatur eiusmod ea ut nulla aliqua est quis id dolore minim voluptate."
+//                             }
+//                         }
+//                     })
+//                     warning_alert_visible.then(|| rsx! {
+//                         Alert {
+//                             alert_type: AlertType::Warning,
+//                             dismissible: true,
+//                             ondismiss: move |_| {
+//                                 warning_alert_visible.set(false);
+//                             },
+//                             h3 {
+//                                 "Some Title"
+//                             }
+//                             div {
+//                                 "Lorem ipsum Minim ad pariatur eiusmod ea ut nulla aliqua est quis id dolore minim voluptate."
+//                             }
+//                         }
+//                     })
+//                     danger_alert_visible.then(|| rsx! {
+//                         Alert {
+//                             alert_type: AlertType::Danger,
+//                             dismissible: true,
+//                             ondismiss: move |_| {
+//                                 danger_alert_visible.set(false);
+//                             },
+//                             h3 {
+//                                 "Some Title"
+//                             }
+//                             div {
+//                                 "Lorem ipsum Minim ad pariatur eiusmod ea ut nulla aliqua est quis id dolore minim voluptate."
+//                             }
+//                         }
+//                     })
+//                 }
+//             }
+//             div {
+//                 class: "example-code",
+//                 figure {
+//                     class: "highlight",
+//                     pre {
+//                         code {
+//                             class: "language-html",
+//                             "data-lang": "html",
+//                             // TODO : syntax highlighting
+//                             "
+// let success_alert_visible = use_state(&cx, || true);
+// let info_alert_visible = use_state(&cx, || true);
+// let warning_alert_visible = use_state(&cx, || true);
+// let danger_alert_visible = use_state(&cx, || true);
+//
+// cx.render(rsx! {{
+//     success_alert_visible.then(|| rsx! {{
+//         Alert {{
+//             alert_type: AlertType::Success,
+//             icon_or_avatar: cx.render(rsx!{{
+//                 Icon {{icon: \"check\",}}
+//             }}),
+//             dismissible: true,
+//             ondismiss: move |_| {{
+//                 success_alert_visible.set(false);
+//             }},
+//             AlertTitle {{
+//                 \"Wow! Everything worked!\"
+//             }}
+//             div {{
+//                 class: \"text-muted\",
+//                 \"Your account has been saved!\"
+//             }}
+//         }}
+//     }})
+//     info_alert_visible.then(|| rsx! {{
+//         Alert {{
+//             alert_type: AlertType::Info,
+//             icon_or_avatar: cx.render(rsx!{{
+//                 Icon {{icon: \"info-circle\",}}
+//             }}),
+//             dismissible: true,
+//             ondismiss: move |_| {{
+//                 info_alert_visible.set(false);
+//             }},
+//             AlertTitle {{
+//                 \"Did you know?\"
+//             }}
+//             div {{
+//                 class: \"text-muted\",
+//                 \"Here is something that you might like to know.\"
+//             }}
+//         }}
+//     }})
+//     warning_alert_visible.then(|| rsx! {{
+//         Alert {{
+//             alert_type: AlertType::Warning,
+//             icon_or_avatar: cx.render(rsx!{{
+//                 Icon {{icon: \"alert-triangle\",}}
+//             }}),
+//             dismissible: true,
+//             ondismiss: move |_| {{
+//                 warning_alert_visible.set(false);
+//             }},
+//             AlertTitle {{
+//                 \"Uh oh, something went wrong\"
+//             }}
+//             div {{
+//                 class: \"text-muted\",
+//                 \"Sorry! There was a problem with your request.\"
+//             }}
+//         }}
+//     }})
+//     danger_alert_visible.then(|| rsx! {{
+//         Alert {{
+//             alert_type: AlertType::Danger,
+//             icon_or_avatar: cx.render(rsx!{{
+//                 Icon {{icon: \"alert-circle\",}}
+//             }}),
+//             dismissible: true,
+//             ondismiss: move |_| {{
+//                 danger_alert_visible.set(false);
+//             }},
+//             AlertTitle {{
+//                 \"I'm so sorry…\"
+//             }}
+//             div {{
+//                 class: \"text-muted\",
+//                 \"Your account has been deleted and can't be restored.\"
+//             }}
+//         }}
+//     }})
+// }})"
+//                         }
+//                     }
+//                 }
+//             }
+            h2 {
+                id: "important-alerts",
+                "Important alerts"
+            }
+            p {
+                "If you want your alert to be really eye-catching, you can add a class "
+                code {
+                    class: "language-plaintext highlighter-rouge",
+                    "alert-important"
+                }
+                "."
+            }
+            div {
+                class: "example no_toc_section",
+                div {
+                    class: "example-content",
+                    success_alert_visible.then(|| rsx! {
+                        Alert {
+                            alert_type: AlertType::Success,
+                            icon_or_avatar: cx.render(rsx!{
+                                Icon { icon: "check" }
+                            }),
+                            important: true,
+                            dismissible: true,
+                            ondismiss: move |_| {
+                                success_alert_visible.set(false);
+                            },
+                            "Your account has been saved!"
+                        }
+                    })
+                    info_alert_visible.then(|| rsx! {
+                        Alert {
+                            alert_type: AlertType::Info,
+                            icon_or_avatar: cx.render(rsx!{
+                                Icon { icon: "info-circle" }
+                            }),
+                            important: true,
+                            dismissible: true,
+                            ondismiss: move |_| {
+                                info_alert_visible.set(false);
+                            },
+                            "Here is something that you might like to know."
+                        }
+                    })
+                    warning_alert_visible.then(|| rsx! {
+                        Alert {
+                            alert_type: AlertType::Warning,
+                            icon_or_avatar: cx.render(rsx!{
+                                Icon { icon: "alert-triangle" }
+                            }),
+                            important: true,
+                            dismissible: true,
+                            ondismiss: move |_| {
+                                warning_alert_visible.set(false);
+                            },
+                            "Sorry! There was a problem with your request."
+                        }
+                    })
+                    danger_alert_visible.then(|| rsx! {
+                        Alert {
+                            alert_type: AlertType::Danger,
+                            icon_or_avatar: cx.render(rsx!{
+                                Icon { icon: "alert-circle" }
+                            }),
+                            important: true,
+                            dismissible: true,
+                            ondismiss: move |_| {
+                                danger_alert_visible.set(false);
+                            },
+                            "Your account has been deleted and can't be restored."
+                        }
+                    })
+                }
+            }
+            div {
+                class: "example-code",
+                figure {
+                    class: "highlight",
+                    pre {
+                        code {
+                            class: "language-html",
+                            "data-lang": "html",
+                            // TODO : syntax highlighting
+                            "
+let success_alert_visible = use_state(&cx, || true);
+let info_alert_visible = use_state(&cx, || true);
+let warning_alert_visible = use_state(&cx, || true);
+let danger_alert_visible = use_state(&cx, || true);
+
+cx.render(rsx! {{
+    success_alert_visible.then(|| rsx! {{
+        Alert {{
+            alert_type: AlertType::Success,
+            icon_or_avatar: cx.render(rsx!{{
+                Icon {{ icon: \"check\" }}
+            }}),
+            important: true,
+            dismissible: true,
+            ondismiss: move |_| {{
+                success_alert_visible.set(false);
+            }},
+            \"Your account has been saved!\"
+        }}
+    }})
+    info_alert_visible.then(|| rsx! {{
+        Alert {{
+            alert_type: AlertType::Info,
+            icon_or_avatar: cx.render(rsx!{{
+                Icon {{ icon: \"info-circle\" }}
+            }}),
+            important: true,
+            dismissible: true,
+            ondismiss: move |_| {{
+                info_alert_visible.set(false);
+            }},
+            \"Here is something that you might like to know.\"
+        }}
+    }})
+    warning_alert_visible.then(|| rsx! {{
+        Alert {{
+            alert_type: AlertType::Warning,
+            icon_or_avatar: cx.render(rsx!{{
+                Icon {{ icon: \"alert-triangle\" }}
+            }}),
+            important: true,
+            dismissible: true,
+            ondismiss: move |_| {{
+                warning_alert_visible.set(false);
+            }},
+            \"Sorry! There was a problem with your request.\"
+        }}
+    }})
+    danger_alert_visible.then(|| rsx! {{
+        Alert {{
+            alert_type: AlertType::Danger,
+            icon_or_avatar: cx.render(rsx!{{
+                Icon {{ icon: \"alert-circle\" }}
+            }}),
+            important: true,
+            dismissible: true,
+            ondismiss: move |_| {{
+                danger_alert_visible.set(false);
+            }},
+            \"Your account has been deleted and can't be restored.\"
+        }}
+    }})
+}})"
+                        }
+                    }
+                }
+            }
         }
     })
 }

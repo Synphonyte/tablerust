@@ -1,7 +1,20 @@
 
+.example-content {
+  font-size: .875rem;
+  line-height: 1.4285714286;
+  color: #1e293b;
+  flex: 1;
+  max-width: 100%;
+}
+
 .alert .alert-icon-or-avatar > .ti {
   margin: -.125rem 1rem -.125rem 0;
   font-size: 1.4rem;
+  display: block;
   color: var(--tblr-alert-color);
+}
+
+.alert.alert-important .alert-icon-or-avatar > .ti {
+  color: white;
 }
 

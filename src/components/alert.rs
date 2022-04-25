@@ -62,7 +62,8 @@ pub fn Alert<'a>(cx: Scope<'a, AlertProps<'a>>) -> Element<'a> {
         (
             cx.render(rsx! {
                 CloseButton {
-                    onclick: move |_| cx.props.ondismiss.call(())
+                    onclick: move |_| cx.props.ondismiss.call(()),
+                    class: if cx.props.important { "btn-close-white" } else { "" }
                 }
             }),
             "alert-dismissible"
