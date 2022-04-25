@@ -48,6 +48,7 @@ pub fn Avatar<'a>(cx: Scope<'a, AvatarProps<'a>>) -> Element<'a> {
             style: "{style}",
             &cx.props.children
         }
+        " "
     })
 }
 

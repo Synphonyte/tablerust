@@ -9,6 +9,7 @@ use tablerust::color::*;
 pub struct ComponentDocPageProps<'a> {
     title: &'a str,
     href: &'a str,
+    description: &'a str,
 
     children: Element<'a>,
 }
@@ -36,6 +37,10 @@ pub fn ComponentDocPage<'a>(cx: Scope<'a, ComponentDocPageProps<'a>>) -> Element
                     }
                 }
             }
+            p {
+                class: "mb-4 text-muted",
+                "{cx.props.description}"
+            }
             &cx.props.children
         }
     })
@@ -43,13 +48,18 @@ pub fn ComponentDocPage<'a>(cx: Scope<'a, ComponentDocPageProps<'a>>) -> Element
 
 #[derive(Props)]
 pub struct ExampleProps<'a> {
+    #[props(default)]
+    centered: bool,
+
     children: Element<'a>,
 }
 
 pub fn Example<'a>(cx: Scope<'a, ExampleProps<'a>>) -> Element<'a> {
+    let centered = if cx.props.centered { "example-centered" } else { "" };
+
     cx.render(rsx! {
         div {
-            class: "example no_toc_section",
+            class: "example no_toc_section {centered}",
             div {
                 class: "example-content",
                 &cx.props.children

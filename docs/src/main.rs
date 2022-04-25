@@ -50,6 +50,22 @@ fn App(cx: Scope) -> Element {
                                             "Alerts"
                                         }
                                     }
+                                    li {
+                                        class: "nav-item",
+                                        Link {
+                                            to: "/components/avatars",
+                                            class: "nav-link",
+                                            "Avatars"
+                                        }
+                                    }
+                                    li {
+                                        class: "nav-item",
+                                        Link {
+                                            to: "/components/badges",
+                                            class: "nav-link",
+                                            "Badges"
+                                        }
+                                    }
                                 }
                             }
                             div {
@@ -61,6 +77,8 @@ fn App(cx: Scope) -> Element {
                                         div {
                                             class: "markdown",
                                             Route { to: "/components/alerts", components::Alerts { } }
+                                            Route { to: "/components/avatars", components::Avatars { } }
+                                            Route { to: "/components/badges", components::Badges { } }
                                         }
                                     }
                                 }

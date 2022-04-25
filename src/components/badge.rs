@@ -14,6 +14,9 @@ pub struct BadgeProps<'a> {
     class: &'a str,
 
     #[props(default)]
+    href: &'a str,
+
+    #[props(default)]
     pill: bool,
 
     #[props(default)]
@@ -33,10 +36,24 @@ pub fn Badge<'a>(cx: Scope<'a, BadgeProps<'a>>) -> Element<'a> {
     let pill = if cx.props.pill { "badge-pill" } else { "" };
     let outline = if cx.props.outline { "badge-outline" } else { "" };
 
-    cx.render(rsx! {
-        span {
-            class: "badge {color} {pill} {outline} {cx.props.class}",
-            &cx.props.children
-        }
-    })
+    let class = format!("badge {color} {pill} {outline} {}", cx.props.class);
+
+    if cx.props.href.is_empty() {
+        cx.render(rsx! {
+            span {
+                class: "{class}",
+                &cx.props.children
+            }
+            " "
+        })
+    } else {
+        cx.render(rsx! {
+            a {
+                class: "{class}",
+                href: "{cx.props.href}",
+                &cx.props.children
+            }
+            " "
+        })
+    }
 }
