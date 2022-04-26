@@ -7,5 +7,5 @@ edition = "2021"
 
 [dependencies]
 tablerust = { path = ".." }
-dioxus = { path = "../../dioxus", features = ["web", "router"] }
+dioxus = { git = "https://github.com/DioxusLabs/dioxus", features = ["web", "router"] }
 log = "0.4.14"
