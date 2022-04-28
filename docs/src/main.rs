@@ -45,25 +45,56 @@ fn App(cx: Scope) -> Element {
                                     li {
                                         class: "nav-item",
                                         Link {
-                                            to: "/components/alerts",
+                                            to: "/",
                                             class: "nav-link",
-                                            "Alerts"
+                                            "Introduction"
                                         }
                                     }
                                     li {
                                         class: "nav-item",
-                                        Link {
-                                            to: "/components/avatars",
+                                        a { // TODO : open when route starts with "components"
                                             class: "nav-link",
-                                            "Avatars"
+                                            href: "#menu-components",
+                                            "data-bs-toggle": "collapse",
+                                            "aria-expanded": "true",
+                                            "Components"
+                                            span { class: "nav-link-toggle" }
                                         }
-                                    }
-                                    li {
-                                        class: "nav-item",
-                                        Link {
-                                            to: "/components/badges",
-                                            class: "nav-link",
-                                            "Badges"
+                                        ul {
+                                            id: "menu-components",
+                                            class: "nav nav-pills collapse show",
+                                            li {
+                                                class: "nav-item",
+                                                Link {
+                                                    to: "/components/alerts",
+                                                    class: "nav-link",
+                                                    "Alerts"
+                                                }
+                                            }
+                                            li {
+                                                class: "nav-item",
+                                                Link {
+                                                    to: "/components/avatars",
+                                                    class: "nav-link",
+                                                    "Avatars"
+                                                }
+                                            }
+                                            li {
+                                                class: "nav-item",
+                                                Link {
+                                                    to: "/components/badges",
+                                                    class: "nav-link",
+                                                    "Badges"
+                                                }
+                                            }
+                                            li {
+                                                class: "nav-item",
+                                                Link {
+                                                    to: "/components/breadcrumbs",
+                                                    class: "nav-link",
+                                                    "Breadcrumbs"
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -76,7 +107,7 @@ fn App(cx: Scope) -> Element {
                                         class: "card-body",
                                         div {
                                             class: "markdown",
-                                            Route { to: "/", "Under Construction. Click left on sidebar."}
+                                            Route { to: "/", Introduction { } }
                                             Route { to: "/components/alerts", components::Alerts { } }
                                             Route { to: "/components/avatars", components::Avatars { } }
                                             Route { to: "/components/badges", components::Badges { } }

@@ -57,3 +57,30 @@ pub fn BreadcrumbItem<'a>(cx: Scope<'a, BreadcrumbItemProps<'a>>) -> Element<'a>
         }
     })
 }
+
+#[derive(Props)]
+pub struct BreadcrumbRouterItemProps<'a> {
+    to: &'a str,
+
+    children: Element<'a>,
+}
+
+pub fn BreadcrumbRouterItem<'a>(cx: Scope<'a, BreadcrumbRouterItemProps<'a>>) -> Element<'a> {
+    let route = use_route(&cx);
+    let url = route.url();
+    let path = url.path();
+    let active = path == cx.props.to;
+
+    let aria = if active { "page" } else { "" };
+
+    cx.render(rsx! {
+        li {
+            class: "breadcrumb-item {active}",
+            "aria-current": "{aria}",
+            Link {
+                to: cx.props.to,
+                &cx.props.children
+            }
+        }
+    })
+}

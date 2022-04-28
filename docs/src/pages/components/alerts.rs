@@ -164,12 +164,12 @@ Alert {{
                 "Dismissible alerts with icons"
             }
             p {
-                "Add the"
+                "Add the "
                 code {
                     class: "language-plaintext highlighter-rouge",
                     "x"
                 }
-                "close button to make an alert modal dismissible. Thanks to that, your alert modal will disappear only once the user closes it."
+                " close button to make an alert modal dismissible. Thanks to that, your alert modal will disappear only once the user closes it."
             }
             Example {
                 success_alert_visible.then(|| rsx! {
@@ -563,12 +563,7 @@ Alert {{
                 "Important alerts"
             }
             p {
-                "If you want your alert to be really eye-catching, you can add a class "
-                code {
-                    class: "language-plaintext highlighter-rouge",
-                    "alert-important"
-                }
-                "."
+                "If you want your alert to be really eye-catching, you can add the 'important' property"
             }
             Example {
                 success_alert_visible.then(|| rsx! {

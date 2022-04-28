@@ -51,6 +51,9 @@ pub struct ExampleProps<'a> {
     #[props(default)]
     centered: bool,
 
+    #[props(default)]
+    class: &'a str,
+
     children: Element<'a>,
 }
 
@@ -59,7 +62,7 @@ pub fn Example<'a>(cx: Scope<'a, ExampleProps<'a>>) -> Element<'a> {
 
     cx.render(rsx! {
         div {
-            class: "example no_toc_section {centered}",
+            class: "example no_toc_section {centered} {cx.props.class}",
             div {
                 class: "example-content",
                 &cx.props.children

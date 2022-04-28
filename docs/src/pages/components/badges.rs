@@ -221,6 +221,7 @@ Badge {{ color: Color::light(Hue::Cyan), \"Cyan\" }}"
             "Add the 'href' property if you want it to perform the function of a link and make it clickable."
         }
         Example {
+              centered: true,
               Badge { href: "#", color: Color::base(Hue::Blue), "Blue" }
               Badge { href: "#", color: Color::base(Hue::Azure), "Azure" }
               Badge { href: "#", color: Color::base(Hue::Indigo), "Indigo" }
