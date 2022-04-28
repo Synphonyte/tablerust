@@ -2,9 +2,9 @@
 
 use tablerust::dioxus::prelude::*;
 use tablerust::components::{Breadcrumb, BreadcrumbSeparator, BreadcrumbItem};
-use tablerust::enums::*;
-use tablerust::icon::*;
-use tablerust::color::*;
+
+
+
 use super::component_doc_page::*;
 
 pub fn Breadcrumbs(cx: Scope) -> Element {

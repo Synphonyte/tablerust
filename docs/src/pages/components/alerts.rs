@@ -1,8 +1,10 @@
+#![allow(non_snake_case)]
+
 use tablerust::dioxus::prelude::*;
 use tablerust::components::{Alert, AlertTitle, AlertType, Avatar, AlertLink};
-use tablerust::enums::*;
+
 use tablerust::icon::*;
-use tablerust::color::*;
+
 use super::component_doc_page::*;
 
 pub fn Alerts(cx: Scope) -> Element {

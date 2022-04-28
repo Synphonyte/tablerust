@@ -1,0 +1,27 @@
+[application]
+name = "Tablerust Docs"
+default_platform = "web"
+out_dir = "dist"
+asset_dir = "assets"
+
+[web.app]
+
+title = "Tablerust Docs"
+
+[web.watcher]
+watch_path = ["../assets", "../src", "src", "assets"]
+
+[web.resource]
+
+style = [
+    "../assets/scss/tabler-icons.scss",
+    "../assets/scss/tablerust.scss",
+    "assets/scss/docs.scss"
+]
+
+[web.resource.dev]
+
+script = []
+
+[application.tools]
+binaryen = { wasm_opt = true }

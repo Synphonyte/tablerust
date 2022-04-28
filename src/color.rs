@@ -1,5 +1,5 @@
 use std::fmt::{Display, Formatter};
-use std::string::ToString;
+
 use strum_macros::Display;
 
 #[derive(Display, Debug)]

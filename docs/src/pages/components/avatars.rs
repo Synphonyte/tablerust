@@ -1,3 +1,5 @@
+#![allow(non_snake_case)]
+
 use tablerust::dioxus::prelude::*;
 use tablerust::components::{Avatar, AvatarList, Badge};
 use tablerust::enums::*;

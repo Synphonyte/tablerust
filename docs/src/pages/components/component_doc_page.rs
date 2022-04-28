@@ -1,7 +1,7 @@
 #![allow(non_snake_case)]
 
 use tablerust::dioxus::prelude::*;
-use tablerust::enums::*;
+
 use tablerust::icon::*;
 use tablerust::color::*;
 

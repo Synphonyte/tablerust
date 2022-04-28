@@ -1,10 +1,6 @@
 #![allow(non_snake_case)]
 
 use tablerust::dioxus::prelude::*;
-use tablerust::components::{Alert, AlertTitle, AlertType, Avatar, AlertLink};
-use tablerust::enums::*;
-use tablerust::icon::*;
-use tablerust::color::*;
 
 pub fn Introduction(cx: Scope) -> Element {
     cx.render(rsx!{

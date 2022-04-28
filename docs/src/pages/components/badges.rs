@@ -1,7 +1,9 @@
+#![allow(non_snake_case)]
+
 use tablerust::dioxus::prelude::*;
 use tablerust::components::{Badge};
-use tablerust::enums::*;
-use tablerust::icon::*;
+
+
 use tablerust::color::*;
 use super::component_doc_page::*;
 
