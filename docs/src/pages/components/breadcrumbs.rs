@@ -31,9 +31,51 @@ pub fn Breadcrumbs(cx: Scope) -> Element {
         }
         ExampleCode {
             "Breadcrumb {{
-    BreadcrumbItem {{ a {{ href: \"#\", \"Home\" }} }}
-    BreadcrumbItem {{ a {{ href: \"#\", \"Library\" }} }}
-    BreadcrumbItem {{ active: true, a {{ href: \"#\", \"Data\" }} }}
+    BreadcrumbItem {{ a {{ href: \"/\", \"Home\" }} }}
+    BreadcrumbItem {{ a {{ href: \"/library\", \"Library\" }} }}
+    BreadcrumbItem {{ active: true, a {{ href: \"/library/data\", \"Data\" }} }}
+}}"
+        }
+        h2 {
+            id: "router-breadcrumb",
+            "Router Breadcrumbs"
+        }
+        p {
+            "The easiest way to use router "
+            code {
+                class: "language-plaintext highlighter-rouge",
+                "Link"
+            }
+            " components inside breadcrumbs is to use "
+            code {
+                class: "language-plaintext highlighter-rouge",
+                "BreadcrumbRouterItem"
+            }
+            "."
+        }
+        Example {
+            centered: true,
+            Breadcrumb {
+                BreadcrumbItem { a { href: "#", "Home" } }
+                BreadcrumbItem { a { href: "#", "Library" } }
+                BreadcrumbItem { active: true, a { href: "#", "Data" } }
+            }
+        }
+        ExampleCode {
+            "Router {{
+    ...
+    BreadcrumbRouterItem {{
+        to: \"/\",
+        \"Home\"
+    }}
+    BreadcrumbRouterItem {{
+        to: \"/library\",
+        \"Library\"
+    }}
+    BreadcrumbRouterItem {{
+        to: \"/library/data\",
+        \"Data\"
+    }}
 }}"
         }
         h2 {
@@ -75,9 +117,9 @@ pub fn Breadcrumbs(cx: Scope) -> Element {
         ExampleCode {
             "Breadcrumb {{
     separator: BreadcrumbSeparator::Dot,
-    BreadcrumbItem {{ a {{ href: \"#\", \"Home\" }} }}
-    BreadcrumbItem {{ a {{ href: \"#\", \"Library\" }} }}
-    BreadcrumbItem {{ active: true, a {{ href: \"#\", \"Data\" }} }}
+    BreadcrumbItem {{ a {{ href: \"/\", \"Home\" }} }}
+    BreadcrumbItem {{ a {{ href: \"/library\", \"Library\" }} }}
+    BreadcrumbItem {{ active: true, a {{ href: \"/library/data\", \"Data\" }} }}
 }}"
         }
         Example {
@@ -92,9 +134,9 @@ pub fn Breadcrumbs(cx: Scope) -> Element {
         ExampleCode {
             "Breadcrumb {{
     separator: BreadcrumbSeparator::Arrow,
-    BreadcrumbItem {{ a {{ href: \"#\", \"Home\" }} }}
-    BreadcrumbItem {{ a {{ href: \"#\", \"Library\" }} }}
-    BreadcrumbItem {{ active: true, a {{ href: \"#\", \"Data\" }} }}
+    BreadcrumbItem {{ a {{ href: \"/\", \"Home\" }} }}
+    BreadcrumbItem {{ a {{ href: \"/library\", \"Library\" }} }}
+    BreadcrumbItem {{ active: true, a {{ href: \"/library/data\", \"Data\" }} }}
 }}"
         }
         Example {
@@ -109,9 +151,9 @@ pub fn Breadcrumbs(cx: Scope) -> Element {
         ExampleCode {
             "Breadcrumb {{
     separator: BreadcrumbSeparator::Bullet,
-    BreadcrumbItem {{ a {{ href: \"#\", \"Home\" }} }}
-    BreadcrumbItem {{ a {{ href: \"#\", \"Library\" }} }}
-    BreadcrumbItem {{ active: true, a {{ href: \"#\", \"Data\" }} }}
+    BreadcrumbItem {{ a {{ href: \"/\", \"Home\" }} }}
+    BreadcrumbItem {{ a {{ href: \"/library\", \"Library\" }} }}
+    BreadcrumbItem {{ active: true, a {{ href: \"/library/data\", \"Data\" }} }}
 }}"
         }
         h2 {
@@ -139,9 +181,9 @@ pub fn Breadcrumbs(cx: Scope) -> Element {
         }
         ExampleCode {
             "Breadcrumb {{
-    BreadcrumbItem {{ a {{ href: \"#\", \"Home\" }} }}
-    BreadcrumbItem {{ a {{ href: \"#\", \"Library\" }} }}
-    BreadcrumbItem {{ active: true, a {{ href: \"#\", \"Data\" }} }}
+    BreadcrumbItem {{ a {{ href: \"/\", \"Home\" }} }}
+    BreadcrumbItem {{ a {{ href: \"/library\", \"Library\" }} }}
+    BreadcrumbItem {{ active: true, a {{ href: \"/library/data\", \"Data\" }} }}
 }}
 h2 {{
     class: \"page-title\",
