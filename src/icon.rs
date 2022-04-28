@@ -1,7 +1,8 @@
 #![allow(non_snake_case)]
 
 use dioxus::prelude::*;
-use crate::color::Color;
+use crate::color;
+use strum::Display;
 
 #[derive(Props)]
 pub struct IconProps<'a> {
@@ -11,18 +12,36 @@ pub struct IconProps<'a> {
     icon: &'a str,
 
     #[props(default, strip_option)]
-    color: Option<Color>,
+    color: Option<IconColor>,
 }
 
 pub fn Icon<'a>(cx: Scope<'a, IconProps<'a>>) -> Element<'a> {
     let color = match &cx.props.color {
-        Some(c) => c.to_string_with_prefix("text"),
+        Some(c) => format!(" text-{c}"),
         None => "".to_string()
     };
 
     cx.render(rsx! {
         i {
-            class: "ti ti-{cx.props.icon} {color} {cx.props.class}",
+            class: "ti ti-{cx.props.icon}{color} {cx.props.class}",
         }
     })
+}
+
+#[derive(Display, Debug)]
+#[strum(serialize_all = "kebab_case")]
+pub enum IconColor {
+    Blue, // TODO: use macro for some hues?
+    Azure,
+    Indigo,
+    Purple,
+    Pink,
+    Red,
+    Orange,
+    Yellow,
+    Lime,
+    Green,
+    Teal,
+    Cyan,
+    Gray,
 }
