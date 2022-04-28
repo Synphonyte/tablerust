@@ -3,7 +3,8 @@
 use dioxus::prelude::*;
 use std::string::ToString;
 
-use crate::color::Color;
+pub use super::avatar::AvatarColor as BadgeColor;
+pub use super::avatar::AvatarHue as BadgeHue;
 
 
 // TODO : badge with link
@@ -22,7 +23,7 @@ pub struct BadgeProps<'a> {
     #[props(default)]
     outline: bool,
 
-    color: Option<Color>,
+    color: Option<BadgeColor>,
 
     children: Element<'a>,
 }

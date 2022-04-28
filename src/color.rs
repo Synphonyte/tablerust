@@ -17,12 +17,14 @@ pub enum Hue {
     Green,
     Teal,
     Cyan,
+    Gray,
+
     Danger,
     Success,
     Warning,
     Info,
-    Gray
 }
+
 
 #[derive(Debug)]
 pub struct Color {

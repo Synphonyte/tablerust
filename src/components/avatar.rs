@@ -2,9 +2,9 @@
 
 use dioxus::prelude::*;
 use std::string::ToString;
-
-use crate::color::Color;
+use std::fmt::{Display, Formatter};
 use crate::enums::{Shape, Size};
+use strum_macros::Display;
 
 
 #[derive(Props)]
@@ -14,7 +14,7 @@ pub struct AvatarProps<'a> {
 
     shape: Option<Shape>,
     size: Option<Size>,
-    color: Option<Color>,
+    color: Option<AvatarColor>,
     image_url: Option<&'a str>,
 
     children: Element<'a>,
@@ -73,4 +73,59 @@ pub fn AvatarList<'a>(cx: Scope<'a, AvatarListProps<'a>>) -> Element<'a> {
             &cx.props.children
         }
     })
+}
+
+#[derive(Display, Debug)]
+#[strum(serialize_all = "kebab_case")]
+pub enum AvatarHue {
+    Blue, // TODO: use macro for some hues?
+    Azure,
+    Indigo,
+    Purple,
+    Pink,
+    Red,
+    Orange,
+    Yellow,
+    Lime,
+    Green,
+    Teal,
+    Cyan,
+    Gray,
+    // semantic
+    Danger,
+    Success,
+    Warning,
+    Info,
+}
+
+#[derive(Debug)]
+pub struct AvatarColor {
+    hue: AvatarHue,
+    light: bool,
+}
+
+impl Display for AvatarColor {
+    fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
+        write!(f, "{}{}", self.hue, if self.light { "-lt" } else { "" })
+    }
+}
+
+impl AvatarColor {
+    pub fn base(hue: AvatarHue) -> Self {
+        Self {
+            hue,
+            light: false,
+        }
+    }
+
+    pub fn light(hue: AvatarHue) -> Self {
+        Self {
+            hue,
+            light: true,
+        }
+    }
+
+    pub fn to_string_with_prefix(&self, prefix: &str) -> String {
+        format!("{prefix}-{self}")
+    }
 }

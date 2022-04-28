@@ -3,11 +3,13 @@
 mod components;
 mod enums;
 mod color;
+mod icon;
 
 use dioxus::prelude::*;
 use components::*;
 use color::*;
 use enums::*;
+use icon::*;
 
 fn main() {
     dioxus::web::launch(App);
@@ -64,7 +66,7 @@ fn App(cx: Scope) -> Element {
                     Avatar { image_url: "/img/avatars/002m.jpg" }
                     Avatar {
                         image_url: "/img/avatars/003m.jpg",
-                        Badge { color: Color::base(Hue::Success), "" }
+                        Badge { color: BadgeColor::base(BadgeHue::Success), "" }
                     }
                 }
             }
@@ -82,10 +84,10 @@ fn App(cx: Scope) -> Element {
 
             div {
                 AvatarList {
-                    Avatar { color: Color::light(Hue::Cyan), "MS" }
-                    Avatar { color: Color::light(Hue::Green),"MS"}
-                    Avatar { color: Color::light(Hue::Pink), size: Size::Md "MS" }
-                    Avatar { color: Color::light(Hue::Blue), shape: Shape::RoundedCircle "MS" }
+                    Avatar { color: AvatarColor::light(AvatarHue::Cyan), "MS" }
+                    Avatar { color: AvatarColor::light(AvatarHue::Green),"MS"}
+                    Avatar { color: AvatarColor::light(AvatarHue::Pink), size: Size::Md "MS" }
+                    Avatar { color: AvatarColor::light(AvatarHue::Blue), shape: Shape::RoundedCircle "MS" }
                 }
             }
 
