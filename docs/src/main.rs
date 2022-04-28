@@ -111,6 +111,7 @@ fn App(cx: Scope) -> Element {
                                             Route { to: "/components/alerts", components::Alerts { } }
                                             Route { to: "/components/avatars", components::Avatars { } }
                                             Route { to: "/components/badges", components::Badges { } }
+                                            Route { to: "/components/breadcrumbs", components::Breadcrumbs { } }
                                         }
                                     }
                                 }
