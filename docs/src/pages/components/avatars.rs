@@ -5,7 +5,7 @@ use tablerust::components::{Avatar, AvatarList, AvatarColor, AvatarHue, Badge, B
 use tablerust::enums::*;
 use tablerust::icon::*;
 use super::component_doc_page::*;
-use crate::Code::Code;
+use crate::code::Code;
 
 pub fn Avatars(cx: Scope) -> Element {
     cx.render(rsx! {

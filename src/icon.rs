@@ -23,7 +23,7 @@ pub fn Icon<'a>(cx: Scope<'a, IconProps<'a>>) -> Element<'a> {
 
     cx.render(rsx! {
         i {
-            class: "ti ti-{cx.props.icon}{color} {cx.props.class}",
+            class: "icon icon-{cx.props.icon}{color} {cx.props.class}",
         }
     })
 }

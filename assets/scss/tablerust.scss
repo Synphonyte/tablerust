@@ -1,29 +1,21 @@
 
-.alert .alert-icon-or-avatar > .ti {
+.alert .alert-icon-or-avatar > .icon {
   margin: -.125rem 1rem -.125rem 0;
   font-size: 1.4rem;
   display: block;
   color: var(--tblr-alert-color);
 }
 
-.alert.alert-important .alert-icon-or-avatar > .ti {
+.alert.alert-important .alert-icon-or-avatar > .icon {
   color: white;
 }
 
-.avatar > .ti {
-  font-size: 24px; /* TODO : in rem */
+.avatar > .icon {
+  font-size: calc(var(--tblr-avatar-size)/ 1.6666666667);
+  width: calc(var(--tblr-avatar-size)/ 1.6666666667);
+  height: calc(var(--tblr-avatar-size)/ 1.6666666667);
 }
 
-.btn > .ti {
+.btn > .icon {
   font-size: 1.25rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  min-width: 1.25rem;
-  margin: 0 .5rem 0 -.25rem;
-  vertical-align: bottom;
-  color: inherit;
-}
-
-.btn.btn-icon > .ti {
-  margin: 0 -1rem;
 }

@@ -22,7 +22,7 @@ pub fn Introduction(cx: Scope) -> Element {
                 class: "row",
                 div {
                     class: "col-sm-6",
-                    h3 { "Content" }
+                    h3 { "Components" }
                     ul {
                         class: "list-unstyled",
                         li {

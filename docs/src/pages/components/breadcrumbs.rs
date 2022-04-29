@@ -2,7 +2,7 @@
 
 use tablerust::dioxus::prelude::*;
 use tablerust::components::{Breadcrumb, BreadcrumbSeparator, BreadcrumbItem};
-use crate::Code::Code;
+use crate::code::Code;
 use super::component_doc_page::*;
 
 pub fn Breadcrumbs(cx: Scope) -> Element {

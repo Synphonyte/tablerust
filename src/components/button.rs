@@ -28,6 +28,9 @@ pub struct ButtonProps<'a> {
     href: Option<&'a str>,
     to: Option<&'a str>,
 
+    rel: Option<&'a str>,
+    target: Option<&'a str>,
+
     #[props(default)]
     onclick: EventHandler<'a, MouseEvent>,
 
@@ -67,13 +70,21 @@ pub fn Button<'a>(cx: Scope<'a, ButtonProps<'a>>) -> Element<'a> {
             }
         }),
         None => match cx.props.href {
-            Some(href) => cx.render(rsx! {
-                a {
-                    class: "{class}",
-                    href: "{href}",
-                    &cx.props.children,
-                }
-            }),
+
+            Some(href) => {
+                let rel = cx.props.rel.unwrap_or("");
+                let target = cx.props.target.unwrap_or("");
+
+                cx.render(rsx! {
+                    a {
+                        class: "{class}",
+                        href: "{href}",
+                        rel: "{rel}",
+                        target: "{target}",
+                        &cx.props.children,
+                    }
+                })
+            },
             None => cx.render(rsx! {
                 button {
                     class: "{class}",
