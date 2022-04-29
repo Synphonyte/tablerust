@@ -3,7 +3,6 @@
 use tablerust::dioxus::prelude::*;
 
 use tablerust::icon::*;
-use tablerust::color::*;
 
 #[derive(Props)]
 pub struct ComponentDocPageProps<'a> {
@@ -31,7 +30,7 @@ pub fn ComponentDocPage<'a>(cx: Scope<'a, ComponentDocPageProps<'a>>) -> Element
                         target: "_blank",
                         Icon {
                             icon: "external-link",
-                            color: Color::base(Hue::Blue),
+                            color: IconColor::Blue,
                         }
                         "Tabler documentation"
                     }

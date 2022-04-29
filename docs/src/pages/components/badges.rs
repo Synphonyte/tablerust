@@ -1,10 +1,7 @@
 #![allow(non_snake_case)]
 
 use tablerust::dioxus::prelude::*;
-use tablerust::components::{Badge};
-
-
-use tablerust::color::*;
+use tablerust::components::{Badge, BadgeColor, BadgeHue};
 use super::component_doc_page::*;
 
 pub fn Badges(cx: Scope) -> Element {
@@ -23,32 +20,32 @@ pub fn Badges(cx: Scope) -> Element {
         }
         Example {
             centered: true,
-            Badge { color: Color::base(Hue::Blue), "Blue" }
-            Badge { color: Color::base(Hue::Azure), "Azure" }
-            Badge { color: Color::base(Hue::Indigo), "Indigo" }
-            Badge { color: Color::base(Hue::Purple), "Purple" }
-            Badge { color: Color::base(Hue::Pink), "Pink" }
-            Badge { color: Color::base(Hue::Red), "Red" }
-            Badge { color: Color::base(Hue::Orange), "Orange" }
-            Badge { color: Color::base(Hue::Yellow), "Yellow" }
-            Badge { color: Color::base(Hue::Lime), "Lime" }
-            Badge { color: Color::base(Hue::Green), "Green" }
-            Badge { color: Color::base(Hue::Teal), "Teal" }
-            Badge { color: Color::base(Hue::Cyan), "Cyan" }
+            Badge { color: BadgeColor::base(BadgeHue::Blue), "Blue" }
+            Badge { color: BadgeColor::base(BadgeHue::Azure), "Azure" }
+            Badge { color: BadgeColor::base(BadgeHue::Indigo), "Indigo" }
+            Badge { color: BadgeColor::base(BadgeHue::Purple), "Purple" }
+            Badge { color: BadgeColor::base(BadgeHue::Pink), "Pink" }
+            Badge { color: BadgeColor::base(BadgeHue::Red), "Red" }
+            Badge { color: BadgeColor::base(BadgeHue::Orange), "Orange" }
+            Badge { color: BadgeColor::base(BadgeHue::Yellow), "Yellow" }
+            Badge { color: BadgeColor::base(BadgeHue::Lime), "Lime" }
+            Badge { color: BadgeColor::base(BadgeHue::Green), "Green" }
+            Badge { color: BadgeColor::base(BadgeHue::Teal), "Teal" }
+            Badge { color: BadgeColor::base(BadgeHue::Cyan), "Cyan" }
         }
         ExampleCode {
-            "Badge {{ color: Color::base(Hue::Blue), \"Blue\" }}
-Badge {{ color: Color::base(Hue::Azure), \"Azure\" }}
-Badge {{ color: Color::base(Hue::Indigo, \"Indigo\" }}
-Badge {{ color: Color::base(Hue::Purple), \"Purple\" }}
-Badge {{ color: Color::base(Hue::Pink), \"Pink\" }}
-Badge {{ color: Color::base(Hue::Red), \"Red\" }}
-Badge {{ color: Color::base(Hue::Orange), \"Orange\" }}
-Badge {{ color: Color::base(Hue::Yellow), \"Yellow\" }}
-Badge {{ color: Color::base(Hue::Lime), \"Lime\" }}
-Badge {{ color: Color::base(Hue::Green), \"Green\" }}
-Badge {{ color: Color::base(Hue::Teal), \"Teal\" }}
-Badge {{ color: Color::base(Hue::Cyan), \"Cyan\" }}"
+            "Badge {{ color: BadgeColor::base(BadgeHue::Blue), \"Blue\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Azure), \"Azure\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Indigo, \"Indigo\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Purple), \"Purple\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Pink), \"Pink\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Red), \"Red\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Orange), \"Orange\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Yellow), \"Yellow\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Lime), \"Lime\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Green), \"Green\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Teal), \"Teal\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Cyan), \"Cyan\" }}"
         }
         h2 {
             id: "headings",
@@ -57,53 +54,53 @@ Badge {{ color: Color::base(Hue::Cyan), \"Cyan\" }}"
         Example {
             h1 {
                 "Example heading ",
-                Badge { color: Color::base(Hue::Gray), "New" }
+                Badge { color: BadgeColor::base(BadgeHue::Gray), "New" }
             }
             h2 {
                 "Example heading ",
-                Badge { color: Color::base(Hue::Gray), "New" }
+                Badge { color: BadgeColor::base(BadgeHue::Gray), "New" }
             }
             h3 {
                 "Example heading ",
-                Badge { color: Color::base(Hue::Gray), "New" }
+                Badge { color: BadgeColor::base(BadgeHue::Gray), "New" }
             }
             h4 {
                 "Example heading ",
-                Badge { color: Color::base(Hue::Gray), "New" }
+                Badge { color: BadgeColor::base(BadgeHue::Gray), "New" }
             }
             h5 {
                 "Example heading ",
-                Badge { color: Color::base(Hue::Gray), "New" }
+                Badge { color: BadgeColor::base(BadgeHue::Gray), "New" }
             }
             h6 {
                 "Example heading ",
-                Badge { color: Color::base(Hue::Gray), "New" }
+                Badge { color: BadgeColor::base(BadgeHue::Gray), "New" }
             }
         }
         ExampleCode {
                 "h1 {{
     \"Example heading \",
-    Badge {{ color: Color::base(Hue::Gray), \"New\" }}
+    Badge {{ color: BadgeColor::base(BadgeHue::Gray), \"New\" }}
 }}
 h2 {{
     \"Example heading \",
-    Badge {{ color: Color::base(Hue::Gray), \"New\" }}
+    Badge {{ color: BadgeColor::base(BadgeHue::Gray), \"New\" }}
 }}
 h3 {{
     \"Example heading \",
-    Badge {{ color: Color::base(Hue::Gray), \"New\" }}
+    Badge {{ color: BadgeColor::base(BadgeHue::Gray), \"New\" }}
 }}
 h4 {{
     \"Example heading \",
-    Badge {{ color: Color::base(Hue::Gray), \"New\" }}
+    Badge {{ color: BadgeColor::base(BadgeHue::Gray), \"New\" }}
 }}
 h5 {{
     \"Example heading \",
-    Badge {{ color: Color::base(Hue::Gray), \"New\" }}
+    Badge {{ color: BadgeColor::base(BadgeHue::Gray), \"New\" }}
 }}
 h6 {{
     \"Example heading \",
-    Badge {{ color: Color::base(Hue::Gray), \"New\" }}
+    Badge {{ color: BadgeColor::base(BadgeHue::Gray), \"New\" }}
 }}"
         }
         h2 {
@@ -112,32 +109,32 @@ h6 {{
         }
         Example {
             centered: true,
-            Badge { color: Color::base(Hue::Blue), outline: true, "Blue" }
-            Badge { color: Color::base(Hue::Azure), outline: true, "Azure" }
-            Badge { color: Color::base(Hue::Indigo), outline: true, "Indigo" }
-            Badge { color: Color::base(Hue::Purple), outline: true, "Purple" }
-            Badge { color: Color::base(Hue::Pink), outline: true, "Pink" }
-            Badge { color: Color::base(Hue::Red), outline: true, "Red" }
-            Badge { color: Color::base(Hue::Orange), outline: true, "Orange" }
-            Badge { color: Color::base(Hue::Yellow), outline: true, "Yellow" }
-            Badge { color: Color::base(Hue::Lime), outline: true, "Lime" }
-            Badge { color: Color::base(Hue::Green), outline: true, "Green" }
-            Badge { color: Color::base(Hue::Teal), outline: true, "Teal" }
-            Badge { color: Color::base(Hue::Cyan), outline: true, "Cyan" }
+            Badge { color: BadgeColor::base(BadgeHue::Blue), outline: true, "Blue" }
+            Badge { color: BadgeColor::base(BadgeHue::Azure), outline: true, "Azure" }
+            Badge { color: BadgeColor::base(BadgeHue::Indigo), outline: true, "Indigo" }
+            Badge { color: BadgeColor::base(BadgeHue::Purple), outline: true, "Purple" }
+            Badge { color: BadgeColor::base(BadgeHue::Pink), outline: true, "Pink" }
+            Badge { color: BadgeColor::base(BadgeHue::Red), outline: true, "Red" }
+            Badge { color: BadgeColor::base(BadgeHue::Orange), outline: true, "Orange" }
+            Badge { color: BadgeColor::base(BadgeHue::Yellow), outline: true, "Yellow" }
+            Badge { color: BadgeColor::base(BadgeHue::Lime), outline: true, "Lime" }
+            Badge { color: BadgeColor::base(BadgeHue::Green), outline: true, "Green" }
+            Badge { color: BadgeColor::base(BadgeHue::Teal), outline: true, "Teal" }
+            Badge { color: BadgeColor::base(BadgeHue::Cyan), outline: true, "Cyan" }
         }
         ExampleCode {
-            "Badge {{ color: Color::base(Hue::Blue), \"Blue\" }}
-Badge {{ color: Color::base(Hue::Azure), outline: true, \"Azure\" }}
-Badge {{ color: Color::base(Hue::Indigo, outline: true, \"Indigo\" }}
-Badge {{ color: Color::base(Hue::Purple), outline: true, \"Purple\" }}
-Badge {{ color: Color::base(Hue::Pink), outline: true, \"Pink\" }}
-Badge {{ color: Color::base(Hue::Red), outline: true, \"Red\" }}
-Badge {{ color: Color::base(Hue::Orange), outline: true, \"Orange\" }}
-Badge {{ color: Color::base(Hue::Yellow), outline: true, \"Yellow\" }}
-Badge {{ color: Color::base(Hue::Lime), outline: true, \"Lime\" }}
-Badge {{ color: Color::base(Hue::Green), outline: true, \"Green\" }}
-Badge {{ color: Color::base(Hue::Teal), outline: true, \"Teal\" }}
-Badge {{ color: Color::base(Hue::Cyan), outline: true, \"Cyan\" }}"
+            "Badge {{ color: BadgeColor::base(BadgeHue::Blue), \"Blue\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Azure), outline: true, \"Azure\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Indigo, outline: true, \"Indigo\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Purple), outline: true, \"Purple\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Pink), outline: true, \"Pink\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Red), outline: true, \"Red\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Orange), outline: true, \"Orange\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Yellow), outline: true, \"Yellow\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Lime), outline: true, \"Lime\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Green), outline: true, \"Green\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Teal), outline: true, \"Teal\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Cyan), outline: true, \"Cyan\" }}"
         }
         h2 {
             id: "pill-badges",
@@ -148,32 +145,32 @@ Badge {{ color: Color::base(Hue::Cyan), outline: true, \"Cyan\" }}"
         }
         Example {
             centered: true,
-            Badge { color: Color::base(Hue::Blue), pill: true, "1" }
-            Badge { color: Color::base(Hue::Azure), pill: true, "2" }
-            Badge { color: Color::base(Hue::Indigo), pill: true, "3" }
-            Badge { color: Color::base(Hue::Purple), pill: true, "4" }
-            Badge { color: Color::base(Hue::Pink), pill: true, "5" }
-            Badge { color: Color::base(Hue::Red), pill: true, "6" }
-            Badge { color: Color::base(Hue::Orange), pill: true, "7" }
-            Badge { color: Color::base(Hue::Yellow), pill: true, "8" }
-            Badge { color: Color::base(Hue::Lime), pill: true, "9" }
-            Badge { color: Color::base(Hue::Green), pill: true, "10" }
-            Badge { color: Color::base(Hue::Teal), pill: true, "11" }
-            Badge { color: Color::base(Hue::Cyan), pill: true, "12" }
+            Badge { color: BadgeColor::base(BadgeHue::Blue), pill: true, "1" }
+            Badge { color: BadgeColor::base(BadgeHue::Azure), pill: true, "2" }
+            Badge { color: BadgeColor::base(BadgeHue::Indigo), pill: true, "3" }
+            Badge { color: BadgeColor::base(BadgeHue::Purple), pill: true, "4" }
+            Badge { color: BadgeColor::base(BadgeHue::Pink), pill: true, "5" }
+            Badge { color: BadgeColor::base(BadgeHue::Red), pill: true, "6" }
+            Badge { color: BadgeColor::base(BadgeHue::Orange), pill: true, "7" }
+            Badge { color: BadgeColor::base(BadgeHue::Yellow), pill: true, "8" }
+            Badge { color: BadgeColor::base(BadgeHue::Lime), pill: true, "9" }
+            Badge { color: BadgeColor::base(BadgeHue::Green), pill: true, "10" }
+            Badge { color: BadgeColor::base(BadgeHue::Teal), pill: true, "11" }
+            Badge { color: BadgeColor::base(BadgeHue::Cyan), pill: true, "12" }
         }
         ExampleCode {
-            "Badge {{ color: Color::base(Hue::Blue), \"1\" }}
-Badge {{ color: Color::base(Hue::Azure), pill: true, \"2\" }}
-Badge {{ color: Color::base(Hue::Indigo, pill: true, \"3\" }}
-Badge {{ color: Color::base(Hue::Purple), pill: true, \"4\" }}
-Badge {{ color: Color::base(Hue::Pink), pill: true, \"5\" }}
-Badge {{ color: Color::base(Hue::Red), pill: true, \"6\" }}
-Badge {{ color: Color::base(Hue::Orange), pill: true, \"7\" }}
-Badge {{ color: Color::base(Hue::Yellow), pill: true, \"8\" }}
-Badge {{ color: Color::base(Hue::Lime), pill: true, \"9\" }}
-Badge {{ color: Color::base(Hue::Green), pill: true, \"10\" }}
-Badge {{ color: Color::base(Hue::Teal), pill: true, \"11\" }}
-Badge {{ color: Color::base(Hue::Cyan), pill: true, \"12\" }}"
+            "Badge {{ color: BadgeColor::base(BadgeHue::Blue), \"1\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Azure), pill: true, \"2\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Indigo, pill: true, \"3\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Purple), pill: true, \"4\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Pink), pill: true, \"5\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Red), pill: true, \"6\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Orange), pill: true, \"7\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Yellow), pill: true, \"8\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Lime), pill: true, \"9\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Green), pill: true, \"10\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Teal), pill: true, \"11\" }}
+Badge {{ color: BadgeColor::base(BadgeHue::Cyan), pill: true, \"12\" }}"
         }
         h2 {
             id: "soft-color-badges",
@@ -188,32 +185,32 @@ Badge {{ color: Color::base(Hue::Cyan), pill: true, \"12\" }}"
         }
             Example {
             centered: true,
-            Badge { color: Color::light(Hue::Blue), "Blue" }
-            Badge { color: Color::light(Hue::Azure), "Azure" }
-            Badge { color: Color::light(Hue::Indigo), "Indigo" }
-            Badge { color: Color::light(Hue::Purple), "Purple" }
-            Badge { color: Color::light(Hue::Pink), "Pink" }
-            Badge { color: Color::light(Hue::Red), "Red" }
-            Badge { color: Color::light(Hue::Orange), "Orange" }
-            Badge { color: Color::light(Hue::Yellow), "Yellow" }
-            Badge { color: Color::light(Hue::Lime), "Lime" }
-            Badge { color: Color::light(Hue::Green), "Green" }
-            Badge { color: Color::light(Hue::Teal), "Teal" }
-            Badge { color: Color::light(Hue::Cyan), "Cyan" }
+            Badge { color: BadgeColor::light(BadgeHue::Blue), "Blue" }
+            Badge { color: BadgeColor::light(BadgeHue::Azure), "Azure" }
+            Badge { color: BadgeColor::light(BadgeHue::Indigo), "Indigo" }
+            Badge { color: BadgeColor::light(BadgeHue::Purple), "Purple" }
+            Badge { color: BadgeColor::light(BadgeHue::Pink), "Pink" }
+            Badge { color: BadgeColor::light(BadgeHue::Red), "Red" }
+            Badge { color: BadgeColor::light(BadgeHue::Orange), "Orange" }
+            Badge { color: BadgeColor::light(BadgeHue::Yellow), "Yellow" }
+            Badge { color: BadgeColor::light(BadgeHue::Lime), "Lime" }
+            Badge { color: BadgeColor::light(BadgeHue::Green), "Green" }
+            Badge { color: BadgeColor::light(BadgeHue::Teal), "Teal" }
+            Badge { color: BadgeColor::light(BadgeHue::Cyan), "Cyan" }
         }
         ExampleCode {
-            "Badge {{ color: Color::light(Hue::Blue), \"Blue\" }}
-Badge {{ color: Color::light(Hue::Azure), \"Azure\" }}
-Badge {{ color: Color::light(Hue::Indigo, \"Indigo\" }}
-Badge {{ color: Color::light(Hue::Purple), \"Purple\" }}
-Badge {{ color: Color::light(Hue::Pink), \"Pink\" }}
-Badge {{ color: Color::light(Hue::Red), \"Red\" }}
-Badge {{ color: Color::light(Hue::Orange), \"Orange\" }}
-Badge {{ color: Color::light(Hue::Yellow), \"Yellow\" }}
-Badge {{ color: Color::light(Hue::Lime), \"Lime\" }}
-Badge {{ color: Color::light(Hue::Green), \"Green\" }}
-Badge {{ color: Color::light(Hue::Teal), \"Teal\" }}
-Badge {{ color: Color::light(Hue::Cyan), \"Cyan\" }}"
+            "Badge {{ color: BadgeColor::light(BadgeHue::Blue), \"Blue\" }}
+Badge {{ color: BadgeColor::light(BadgeHue::Azure), \"Azure\" }}
+Badge {{ color: BadgeColor::light(BadgeHue::Indigo, \"Indigo\" }}
+Badge {{ color: BadgeColor::light(BadgeHue::Purple), \"Purple\" }}
+Badge {{ color: BadgeColor::light(BadgeHue::Pink), \"Pink\" }}
+Badge {{ color: BadgeColor::light(BadgeHue::Red), \"Red\" }}
+Badge {{ color: BadgeColor::light(BadgeHue::Orange), \"Orange\" }}
+Badge {{ color: BadgeColor::light(BadgeHue::Yellow), \"Yellow\" }}
+Badge {{ color: BadgeColor::light(BadgeHue::Lime), \"Lime\" }}
+Badge {{ color: BadgeColor::light(BadgeHue::Green), \"Green\" }}
+Badge {{ color: BadgeColor::light(BadgeHue::Teal), \"Teal\" }}
+Badge {{ color: BadgeColor::light(BadgeHue::Cyan), \"Cyan\" }}"
         }
         h2 {
             id: "links",
@@ -224,32 +221,32 @@ Badge {{ color: Color::light(Hue::Cyan), \"Cyan\" }}"
         }
         Example {
               centered: true,
-              Badge { href: "#", color: Color::base(Hue::Blue), "Blue" }
-              Badge { href: "#", color: Color::base(Hue::Azure), "Azure" }
-              Badge { href: "#", color: Color::base(Hue::Indigo), "Indigo" }
-              Badge { href: "#", color: Color::base(Hue::Purple), "Purple" }
-              Badge { href: "#", color: Color::base(Hue::Pink), "Pink" }
-              Badge { href: "#", color: Color::base(Hue::Red), "Red" }
-              Badge { href: "#", color: Color::base(Hue::Orange), "Orange" }
-              Badge { href: "#", color: Color::base(Hue::Yellow), "Yellow" }
-              Badge { href: "#", color: Color::base(Hue::Lime), "Lime" }
-              Badge { href: "#", color: Color::base(Hue::Green), "Green" }
-              Badge { href: "#", color: Color::base(Hue::Teal), "Teal" }
-              Badge { href: "#", color: Color::base(Hue::Cyan), "Cyan" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Blue), "Blue" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Azure), "Azure" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Indigo), "Indigo" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Purple), "Purple" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Pink), "Pink" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Red), "Red" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Orange), "Orange" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Yellow), "Yellow" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Lime), "Lime" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Green), "Green" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Teal), "Teal" }
+              Badge { href: "#", color: BadgeColor::base(BadgeHue::Cyan), "Cyan" }
         }
         ExampleCode {
-            "Badge {{ href: \"#\", color: Color::base(Hue::Blue), \"Blue\" }}
-Badge {{ href: \"#\", color: Color::base(Hue::Azure), \"Azure\" }}
-Badge {{ href: \"#\", color: Color::base(Hue::Indigo), \"Indigo\" }}
-Badge {{ href: \"#\", color: Color::base(Hue::Purple), \"Purple\" }}
-Badge {{ href: \"#\", color: Color::base(Hue::Pink), \"Pink\" }}
-Badge {{ href: \"#\", color: Color::base(Hue::Red), \"Red\" }}
-Badge {{ href: \"#\", color: Color::base(Hue::Orange), \"Orange\" }}
-Badge {{ href: \"#\", color: Color::base(Hue::Yellow), \"Yellow\" }}
-Badge {{ href: \"#\", color: Color::base(Hue::Lime), \"Lime\" }}
-Badge {{ href: \"#\", color: Color::base(Hue::Green), \"Green\" }}
-Badge {{ href: \"#\", color: Color::base(Hue::Teal), \"Teal\" }}
-Badge {{ href: \"#\", color: Color::base(Hue::Cyan), \"Cyan\" }}"
+            "Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Blue), \"Blue\" }}
+Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Azure), \"Azure\" }}
+Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Indigo), \"Indigo\" }}
+Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Purple), \"Purple\" }}
+Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Pink), \"Pink\" }}
+Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Red), \"Red\" }}
+Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Orange), \"Orange\" }}
+Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Yellow), \"Yellow\" }}
+Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Lime), \"Lime\" }}
+Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Green), \"Green\" }}
+Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Teal), \"Teal\" }}
+Badge {{ href: \"#\", color: BadgeColor::base(BadgeHue::Cyan), \"Cyan\" }}"
         }
         h2 {
             id: "button-with-badge",

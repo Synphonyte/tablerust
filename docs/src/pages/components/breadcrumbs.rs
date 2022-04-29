@@ -2,9 +2,7 @@
 
 use tablerust::dioxus::prelude::*;
 use tablerust::components::{Breadcrumb, BreadcrumbSeparator, BreadcrumbItem};
-
-
-
+use crate::Code::Code;
 use super::component_doc_page::*;
 
 pub fn Breadcrumbs(cx: Scope) -> Element {
@@ -42,15 +40,9 @@ pub fn Breadcrumbs(cx: Scope) -> Element {
         }
         p {
             "The easiest way to use router "
-            code {
-                class: "language-plaintext highlighter-rouge",
-                "Link"
-            }
+            Code {"Link"}
             " components inside breadcrumbs is to use "
-            code {
-                class: "language-plaintext highlighter-rouge",
-                "BreadcrumbRouterItem"
-            }
+            Code {"BreadcrumbRouterItem"}
             "."
         }
         Example {
@@ -84,25 +76,13 @@ pub fn Breadcrumbs(cx: Scope) -> Element {
         }
         p {
             "Depending on the aesthetics of your design, you can choose "
-            code {
-                class: "language-plaintext highlighter-rouge",
-                "Slash"
-            }
+            Code {"Slash"}
             " (default), "
-            code {
-                class: "language-plaintext highlighter-rouge",
-                "Dot"
-            }
+            Code {"Dot"}
             ", "
-            code {
-                class: "language-plaintext highlighter-rouge",
-                "Bullet"
-            }
+            Code {"Bullet"}
             " or "
-            code {
-                class: "language-plaintext highlighter-rouge",
-                "Arrow"
-            }
+            Code {"Arrow"}
             "."
         }
         Example {

@@ -1,11 +1,11 @@
 #![allow(non_snake_case)]
 
 use tablerust::dioxus::prelude::*;
-use tablerust::components::{Avatar, AvatarList, Badge};
+use tablerust::components::{Avatar, AvatarList, AvatarColor, AvatarHue, Badge, BadgeHue, BadgeColor};
 use tablerust::enums::*;
 use tablerust::icon::*;
-use tablerust::color::*;
 use super::component_doc_page::*;
+use crate::Code::Code;
 
 pub fn Avatars(cx: Scope) -> Element {
     cx.render(rsx! {
@@ -19,10 +19,7 @@ pub fn Avatars(cx: Scope) -> Element {
             }
             p {
                 "Use the"
-                code {
-                    class: "language-plaintext highlighter-rouge",
-                    "avatar"
-                }
+                Code {"avatar"}
                 "class to add an avatar to your interface design for greater customisation."
             }
             Example {
@@ -92,32 +89,32 @@ Avatar {{
             Example {
                 centered: true,
                 Avatar {
-                    color: Color::light(Hue::Green),
+                    color: AvatarColor::light(AvatarHue::Green),
                     "AB"
                 }
                 Avatar {
-                    color: Color::light(Hue::Red),
+                    color: AvatarColor::light(AvatarHue::Red),
                     "CD"
                 }
                 Avatar {
-                    color: Color::light(Hue::Yellow),
+                    color: AvatarColor::light(AvatarHue::Yellow),
                     "EF"
                 }
                 Avatar {
-                    color: Color::light(Hue::Blue),
+                    color: AvatarColor::light(AvatarHue::Blue),
                     "GH"
                 }
                 Avatar {
-                    color: Color::light(Hue::Purple),
+                    color: AvatarColor::light(AvatarHue::Purple),
                     "IJ"
                 }
             }
             ExampleCode {
-                "Avatar {{ color: Color::light(Hue::Green), \"AB\" }}
-Avatar {{ color: Color::light(Hue::Red), \"CD\" }}
-Avatar {{ color: Color::light(Hue::Yellow), \"EF\" }}
-Avatar {{ color: Color::light(Hue::Blue), \"GH\" }}
-Avatar {{ color: Color::light(Hue::Purple), \"IJ\" }}"
+                "Avatar {{ color: AvatarColor::light(AvatarHue::Green), \"AB\" }}
+Avatar {{ color: AvatarColor::light(AvatarHue::Red), \"CD\" }}
+Avatar {{ color: AvatarColor::light(AvatarHue::Yellow), \"EF\" }}
+Avatar {{ color: AvatarColor::light(AvatarHue::Blue), \"GH\" }}
+Avatar {{ color: AvatarColor::light(AvatarHue::Purple), \"IJ\" }}"
             }
             h2 {
                 id: "avatar-size",
@@ -171,37 +168,37 @@ Avatar {{ size: Size::Xs, image_url: \"/img/avatars/000f.jpg\", }}"
                 centered: true,
                 Avatar { image_url: "/img/avatars/006f.jpg", }
                 Avatar { image_url: "/img/avatars/004f.jpg",
-                    Badge { color: Color::base(Hue::Danger), "" }
+                    Badge { color: BadgeColor::base(BadgeHue::Danger), "" }
                 }
                 Avatar { image_url: "/img/avatars/007m.jpg",
-                    Badge { color: Color::base(Hue::Success), "" }
+                    Badge { color: BadgeColor::base(BadgeHue::Success), "" }
                 }
                 Avatar { "SA"
-                    Badge { color: Color::base(Hue::Warning), "" }
+                    Badge { color: BadgeColor::base(BadgeHue::Warning), "" }
                 }
                 Avatar { image_url: "/img/avatars/004f.jpg",
-                    Badge { color: Color::base(Hue::Info), "" }
+                    Badge { color: BadgeColor::base(BadgeHue::Info), "" }
                 }
                 Avatar { image_url: "/img/avatars/004f.jpg",
-                    Badge { color: Color::base(Hue::Gray), "5" }
+                    Badge { color: BadgeColor::base(BadgeHue::Gray), "5" }
                 }
             }
             ExampleCode {
                 "Avatar {{ image_url: \"/img/avatars/006mf.jpg\", }}
 Avatar {{ image_url: \"/img/avatars/004f.jpg\",
-    Badge {{ color: Color::base(Hue::Danger), \"\" }}
+    Badge {{ color: BadgeColor::base(BadgeHue::Danger), \"\" }}
 }}
 Avatar {{ image_url: \"/img/avatars/007m.jpg\",
-    Badge {{ color: Color::base(Hue::Success), \"\" }}
+    Badge {{ color: BadgeColor::base(BadgeHue::Success), \"\" }}
 }}
 Avatar {{ \"SA\"
-    Badge {{ color: Color::base(Hue::Warning), \"\" }}
+    Badge {{ color: BadgeColor::base(BadgeHue::Warning), \"\" }}
 }}
 Avatar {{ image_url: \"/img/avatars/004f.jpg\",
-    Badge {{ color: Color::base(Hue::Info), \"\" }}
+    Badge {{ color: BadgeColor::base(BadgeHue::Info), \"\" }}
 }}
 Avatar {{ image_url: \"/img/avatars/004f.jpg\",
-    Badge {{ color: Color::base(Hue::Gray), \"5\" }}
+    Badge {{ color: BadgeColor::base(BadgeHue::Gray), \"5\" }}
 }}"
             }
             h2 {

@@ -2,10 +2,9 @@
 
 use tablerust::dioxus::prelude::*;
 use tablerust::components::{Alert, AlertTitle, AlertType, Avatar, AlertLink};
-
 use tablerust::icon::*;
-
 use super::component_doc_page::*;
+use crate::Code::Code;
 
 pub fn Alerts(cx: Scope) -> Element {
     let success_alert_visible = use_state(&cx, || true);
@@ -167,10 +166,7 @@ Alert {{
             }
             p {
                 "Add the "
-                code {
-                    class: "language-plaintext highlighter-rouge",
-                    "x"
-                }
+                Code {"x"}
                 " close button to make an alert modal dismissible. Thanks to that, your alert modal will disappear only once the user closes it."
             }
             Example {

@@ -3,9 +3,10 @@
 use dioxus::prelude::*;
 use std::string::ToString;
 
-pub use super::avatar::AvatarColor as BadgeColor;
-pub use super::avatar::AvatarHue as BadgeHue;
+use super::avatar::{AvatarHue, AvatarColor};
 
+pub type BadgeColor = AvatarColor;
+pub type BadgeHue = AvatarHue;
 
 // TODO : badge with link
 
