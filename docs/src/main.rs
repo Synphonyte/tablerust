@@ -207,6 +207,14 @@ fn App(cx: Scope) -> Element {
                                                     "Breadcrumbs"
                                                 }
                                             }
+                                            li {
+                                                class: "nav-item",
+                                                Link {
+                                                    to: "/components/buttons",
+                                                    class: "nav-link",
+                                                    "Buttons"
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -224,6 +232,7 @@ fn App(cx: Scope) -> Element {
                                             Route { to: "/components/avatars", components::Avatars { } }
                                             Route { to: "/components/badges", components::Badges { } }
                                             Route { to: "/components/breadcrumbs", components::Breadcrumbs { } }
+                                            Route { to: "/components/buttons", components::Buttons { } }
                                         }
                                     }
                                 }
