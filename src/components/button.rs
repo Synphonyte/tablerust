@@ -3,7 +3,6 @@
 use dioxus::prelude::*;
 use strum::Display;
 use dioxus::events::MouseEvent;
-use crate::color;
 
 // TODO: Dropdown
 
@@ -46,12 +45,12 @@ pub fn Button<'a>(cx: Scope<'a, ButtonProps<'a>>) -> Element<'a> {
     let disabled = if cx.props.disabled { " disabled" } else { "" };
 
     let shape = match cx.props.shape {
-        Some(ref s) => format!(" btn-{}", s),
+        Some(ref s) => format_args!(" btn-{}", s),
         None => "".to_owned(),
     };
 
     let size = match cx.props.size {
-        Some(ref s) => format!(" btn-{}", s),
+        Some(ref s) => format_args!(" btn-{}", s),
         None => "".to_owned(),
     };
 
@@ -59,7 +58,7 @@ pub fn Button<'a>(cx: Scope<'a, ButtonProps<'a>>) -> Element<'a> {
 
     let icon_only = if cx.props.icon_only { " btn-icon" } else { "" };
 
-    let class = format!("btn{color}{disabled}{shape}{size}{loading}{icon_only}");
+    let class = format_args!("btn{color}{disabled}{shape}{size}{loading}{icon_only}");
 
     match cx.props.to {
         Some(to) => cx.render(rsx! {
@@ -104,7 +103,7 @@ pub struct ButtonListProps<'a> {
 
 pub fn ButtonList<'a>(cx: Scope<'a, ButtonListProps<'a>>) -> Element<'a> {
     let align = match cx.props.align {
-        Some(ref a) => format!(" justify-content-{}", a),
+        Some(ref a) => format_args!(" justify-content-{a}"),
         None => "".to_owned(),
     };
 
@@ -193,10 +192,10 @@ pub enum ButtonColor {
 impl ButtonColor {
     fn string_with_flair(&self, flair: &Option<ButtonFlair>) -> String {
         let flair = match flair {
-            Some(flair) => format!("-{}", flair.to_string()),
+            Some(flair) => format_args!("-{}", flair.to_string()),
             None => "".into(),
         };
 
-        format!(" btn{}-{}", flair, self)
+        format_args!(" btn{flair}-{self}")
     }
 }
