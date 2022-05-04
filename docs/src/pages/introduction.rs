@@ -53,6 +53,13 @@ pub fn Introduction(cx: Scope) -> Element {
                                 "Breadcrumbs"
                             }
                         }
+                        li {
+                            "- "
+                            Link {
+                                to: "/components/buttons",
+                                "Buttons"
+                            }
+                        }
                     }
                 }
             }

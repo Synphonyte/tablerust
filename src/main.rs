@@ -2,12 +2,10 @@
 
 mod components;
 mod enums;
-mod color;
 mod icon;
 
 use dioxus::prelude::*;
 use components::*;
-use color::*;
 use enums::*;
 use icon::*;
 
