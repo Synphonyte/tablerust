@@ -19,7 +19,7 @@ pub struct CardProps<'a> {
 }
 
 pub fn Card<'a>(cx: Scope<'a, CardProps<'a>>) -> Element<'a> {
-    let padding = props.padding.map(|p| format_args!(" card-{}", p.to_string())).unwrap_or("".to_owned());
+    let padding = cx.props.padding.as_ref().map(|p| format_args!(" card-{p}").to_string()).unwrap_or("".to_owned());
 
     cx.render(rsx! {
         div {

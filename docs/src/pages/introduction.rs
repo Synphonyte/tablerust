@@ -60,6 +60,13 @@ pub fn Introduction(cx: Scope) -> Element {
                                 "Buttons"
                             }
                         }
+                        li {
+                            "- "
+                            Link {
+                                to: "/components/cards",
+                                "Cards"
+                            }
+                        }
                     }
                 }
             }

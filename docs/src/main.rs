@@ -215,6 +215,14 @@ fn App(cx: Scope) -> Element {
                                                     "Buttons"
                                                 }
                                             }
+                                            li {
+                                                class: "nav-item",
+                                                Link {
+                                                    to: "/components/cards",
+                                                    class: "nav-link",
+                                                    "Cards"
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -233,6 +241,7 @@ fn App(cx: Scope) -> Element {
                                             Route { to: "/components/badges", components::Badges { } }
                                             Route { to: "/components/breadcrumbs", components::Breadcrumbs { } }
                                             Route { to: "/components/buttons", components::Buttons { } }
+                                            Route { to: "/components/cards", components::Cards { } }
                                         }
                                     }
                                 }
