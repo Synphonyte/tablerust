@@ -1,7 +1,6 @@
 #![allow(non_snake_case)]
 
 use dioxus::prelude::*;
-use crate::color;
 use strum::Display;
 
 #[derive(Props)]

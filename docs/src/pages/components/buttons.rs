@@ -1,7 +1,7 @@
 #![allow(non_snake_case)]
 
 use tablerust::dioxus::prelude::*;
-use tablerust::components::{Button, ButtonList, ButtonListAlign, ButtonColor};
+use tablerust::components::{Button, ButtonList, ButtonColor, ButtonFlair, ButtonShape, ButtonSize};
 use crate::code::Code;
 use super::component_doc_page::*;
 
@@ -105,6 +105,167 @@ Button {{ color: ButtonColor::Danger, disabled: true, \"Danger\" }}
 Button {{ color: ButtonColor::Info, disabled: true, \"Info\" }}
 Button {{ color: ButtonColor::Light, disabled: true, \"Light\" }}
 Button {{ color: ButtonColor::Dark, disabled: true, \"Dark\" }}"
+        }
+        h2 {
+            id: "color-variations",
+            "Color variations"
+        }
+        p {
+            "Choose the right color for your button to make it go well with your design and draw users’ attention. Button colors can have a big influence on users’ decisions, which is why it’s important to choose them based on the intended purpose."
+        }
+        Example {
+            centered: true,
+            ButtonList {
+                Button { color: ButtonColor::Blue, "Blue" }
+                Button { color: ButtonColor::Azure, "Azure" }
+                Button { color: ButtonColor::Indigo, "Indigo" }
+                Button { color: ButtonColor::Purple, "Purple" }
+                Button { color: ButtonColor::Pink, "Pink" }
+                Button { color: ButtonColor::Red, "Red" }
+                Button { color: ButtonColor::Orange, "Orange" }
+                Button { color: ButtonColor::Yellow, "Yellow" }
+                Button { color: ButtonColor::Lime, "Lime" }
+                Button { color: ButtonColor::Green, "Green" }
+                Button { color: ButtonColor::Teal, "Teal" }
+                Button { color: ButtonColor::Cyan, "Cyan" }
+            }
+        }
+        ExampleCode {
+            "Button {{ color: ButtonColor::Blue, \"Blue\" }}
+Button {{ color: ButtonColor::Azure, \"Azure\" }}
+Button {{ color: ButtonColor::Indigo, \"Indigo\" }}
+Button {{ color: ButtonColor::Purple, \"Purple\" }}
+Button {{ color: ButtonColor::Pink, \"Pink\" }}
+Button {{ color: ButtonColor::Red, \"Red\" }}
+Button {{ color: ButtonColor::Orange, \"Orange\" }}
+Button {{ color: ButtonColor::Yellow, \"Yellow\" }}
+Button {{ color: ButtonColor::Lime, \"Lime\" }}
+Button {{ color: ButtonColor::Green, \"Green\" }}
+Button {{ color: ButtonColor::Teal, \"Teal\" }}
+Button {{ color: ButtonColor::Cyan, \"Cyan\" }}"
+        }
+        h2 {
+            id: "button-flair",
+            "Button Flair"
+        }
+        p {
+            "Use the "
+            Code {
+                "flair"
+            }
+            " property to make your button look simple yet aesthetically appealing. Ghost buttons help focus users’ attention on the website’s primary design, at the same time encouraging them to take action. While Outline buttons are perfect to use as secondary buttons, as they don’t distract users from the main action."
+        }
+        p {
+
+        }
+        Example {
+            centered: true,
+            ButtonList {
+                Button { flair: ButtonFlair::Ghost, color: ButtonColor::Primary, "Primary" }
+                Button { flair: ButtonFlair::Ghost, color: ButtonColor::Secondary, "Secondary" }
+                Button { flair: ButtonFlair::Ghost, color: ButtonColor::Success, "Success" }
+                Button { flair: ButtonFlair::Ghost, color: ButtonColor::Warning, "Warning" }
+                Button { flair: ButtonFlair::Ghost, color: ButtonColor::Danger, "Danger" }
+                Button { flair: ButtonFlair::Ghost, color: ButtonColor::Info, "Info" }
+                Button { flair: ButtonFlair::Ghost, color: ButtonColor::Light, "Light" }
+                Button { flair: ButtonFlair::Ghost, color: ButtonColor::Dark, "Dark" }
+            }
+        }
+        ExampleCode {
+            "Button {{ flair: ButtonFlair::Ghost, color: ButtonColor::Primary, \"Primary\" }}
+Button {{ flair: ButtonFlair::Ghost, color: ButtonColor::Secondary, \"Secondary\" }}
+Button {{ flair: ButtonFlair::Ghost, color: ButtonColor::Success, \"Success\" }}
+Button {{ flair: ButtonFlair::Ghost, color: ButtonColor::Warning, \"Warning\" }}
+Button {{ flair: ButtonFlair::Ghost, color: ButtonColor::Danger, \"Danger\" }}
+Button {{ flair: ButtonFlair::Ghost, color: ButtonColor::Info, \"Info\" }}
+Button {{ flair: ButtonFlair::Ghost, color: ButtonColor::Light, \"Light\" }}
+Button {{ flair: ButtonFlair::Ghost, color: ButtonColor::Dark, \"Dark\" }}"
+        }
+        Example {
+            centered: true,
+            ButtonList {
+                Button { flair: ButtonFlair::Outline, color: ButtonColor::Primary, "Primary" }
+                Button { flair: ButtonFlair::Outline, color: ButtonColor::Secondary, "Secondary" }
+                Button { flair: ButtonFlair::Outline, color: ButtonColor::Success, "Success" }
+                Button { flair: ButtonFlair::Outline, color: ButtonColor::Warning, "Warning" }
+                Button { flair: ButtonFlair::Outline, color: ButtonColor::Danger, "Danger" }
+                Button { flair: ButtonFlair::Outline, color: ButtonColor::Info, "Info" }
+                Button { flair: ButtonFlair::Outline, color: ButtonColor::Light, "Light" }
+                Button { flair: ButtonFlair::Outline, color: ButtonColor::Dark, "Dark" }
+            }
+        }
+        ExampleCode {
+            "Button {{ flair: ButtonFlair::Outline, color: ButtonColor::Primary, \"Primary\" }}
+Button {{ flair: ButtonFlair::Outline, color: ButtonColor::Secondary, \"Secondary\" }}
+Button {{ flair: ButtonFlair::Outline, color: ButtonColor::Success, \"Success\" }}
+Button {{ flair: ButtonFlair::Outline, color: ButtonColor::Warning, \"Warning\" }}
+Button {{ flair: ButtonFlair::Outline, color: ButtonColor::Danger, \"Danger\" }}
+Button {{ flair: ButtonFlair::Outline, color: ButtonColor::Info, \"Info\" }}
+Button {{ flair: ButtonFlair::Outline, color: ButtonColor::Light, \"Light\" }}
+Button {{ flair: ButtonFlair::Outline, color: ButtonColor::Dark, \"Dark\" }}"
+        }
+        h2 {
+            id: "button-shape",
+            "Button Shape"
+        }
+        p {
+            "Add "
+            Code {
+                "shape: ButtonShape::Square"
+            }
+            " to remove the border radius, if you want the corners of your button to be square rather than rounded. Or use "
+            Code {
+                "shape: ButtonShape::Pill"
+            }
+            " to make your button rounded and give it a modern and attractive look."
+        }
+        Example {
+            centered: true,
+            ButtonList {
+                Button { shape: ButtonShape::Square, "White" }
+                Button { shape: ButtonShape::Pill, "White" }
+            }
+        }
+        ExampleCode {
+             "Button {{ shape: ButtonShape::Square, \"White\" }}
+Button {{ shape: ButtonShape::Square, \"White\" }}"
+        }
+        h2 {
+            id: "button-size",
+            "Button size"
+        }
+        p {
+            "Add "
+            Code {
+                "size: ButtonSize::Sm"
+            }
+            " or "
+            Code {
+                "size: ButtonSize::Lg"
+            }
+            " to change the size of your button and differentiate those which should have primary focus from those of secondary importance. Adapt the button size to your design and encourage users to take actions."
+        }
+        Example {
+            centered: true,
+            ButtonList {
+                Button { size: ButtonSize::Lg, color: ButtonColor::Primary, "Large Button" }
+                Button { size: ButtonSize::Lg, "Large Button" }
+            }
+        }
+        ExampleCode {
+            "Button {{ size: ButtonSize::Lg, \"Large Button\" }}
+Button {{ size: ButtonSize::Lg, \"Large Button\" }}"
+        }
+        Example {
+            centered: true,
+            ButtonList {
+                Button { size: ButtonSize::Sm, color: ButtonColor::Primary, "Small Button" }
+                Button { size: ButtonSize::Sm, "Small Button" }
+            }
+        }
+        ExampleCode {
+            "Button {{ size: ButtonSize::Sm, \"Small Button\" }}
+Button {{ size: ButtonSize::Sm, \"Small Button\" }}"
         }
     })
 }
